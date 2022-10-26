@@ -6,3 +6,5 @@ const { User } = require('../../models');
 // LOGIN user
 
 // LOGOUT user
+
+module.exports = router;

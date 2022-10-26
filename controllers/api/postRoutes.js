@@ -8,3 +8,5 @@ const withAuth = require('../../utils/auth');
 // UPDATE an existing post
 
 // DELETE an existing post
+
+module.exports = router;

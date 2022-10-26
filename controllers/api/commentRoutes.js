@@ -8,3 +8,5 @@ const withAuth = require('../../utils/auth');
 // UPDATE a comment
 
 // DELETE a comment
+
+module.exports = router;
