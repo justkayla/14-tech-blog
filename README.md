@@ -61,7 +61,7 @@ THEN I am able to view comments but I am prompted to log in again before I can a
 
 ## Link to repository on GitHub
 
-
+https://github.com/justkayla/14-tech-blog 
 
 
 ## Link to deployed site on Railway
