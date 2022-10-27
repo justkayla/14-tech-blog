@@ -1,16 +1,35 @@
 
+/* Body styling */
+body {
+    padding: 100px;
+}
+
 /* Nav bar styling */
 #nav-header {
     color: #FCA358;
 }
 
-/* Log in styling */
-#login {
-    padding-top: 200px;
+/*Homepage styling */
+
+/*Blog post styling */
+.blog-post {
+    border: 2px solid grey;
+    border-radius: 1%;
+    padding: 20px;
+    margin: 15px;   
 }
+
+/* Log in styling */
 #login-header {
     text-align: center;
 }
 #login-button {
+    margin-top: 10px;
     background-color: #FCA358;
+    border-color: #FCA358;
+}
+#sign-up-button {
+    margin-top: 10px;
+    border-color: #FCA358;
+    background-color: #FCA358;    
 }
