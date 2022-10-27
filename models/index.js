@@ -2,44 +2,37 @@ const User = require('./User');
 const Post = require('./Post');
 const Comment = require('./Comment');
 
-// a User can hasOne Post
-User.hasOne(Post, {
-    foreignKey: 'user_id',
-    onDelete: 'CASCADE'
-});
-
-// a User can hasMany Post
+// a User can have many Posts
 User.hasMany(Post, {
     foreignKey: 'user_id',
-    onDelete: 'CASCADE',    // Does this delete all user posts?
-})
+    onDelete: 'CASCADE',
+});
 
-// a Post belongsTo one User
+// a User can have many Comments
+User.hasMany(Comment, {
+    foreignKey: 'user_id',
+    onDelete: 'CASCADE',
+});
+
+// a Post belongs to one User
 Post.belongsTo(User, {
     foreignKey: 'user_id',
 });
 
-// a Post can hasOne Comment
-Post.hasOne(Comment, {
+// a Post can have many Comments
+Post.hasMany(Comment, {
     foreignKey: 'post_id',
     onDelete: 'CASCADE',
 });
 
-// a Post can hasMany Comment
-Post.hasMany(Comment, {
-    foreignKey: 'post_id',
-    onDelete: 'CASCADE',    // Does this delete all comments on post?
-});
-
-// a Comment belongsTo one Post
+// a Comment belongs to one Post
 Comment.belongsTo(Post, {
     foreignKey: 'post_id',
 });
 
+// a Comment belongs to one User
 Comment.belongsTo(User, {
     foreignKey: 'user_id',
 })
-
-// Need to define User-Comment relationship, or is that relationship defined through the Post route?
 
 module.exports = { User, Post, Comment };
