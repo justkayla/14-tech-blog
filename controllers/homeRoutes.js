@@ -82,4 +82,9 @@ router.get('/login', (req, res) => {
     res.render('login');
 });
 
+// CREATE ACCOUNT route
+router.get('/create-account', (req, res) => {
+    res.render('create-account');
+});
+
 module.exports = router;
