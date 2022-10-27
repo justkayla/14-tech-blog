@@ -1,7 +1,20 @@
 [
     {
-        "name": "Test User 1",
-        "email": "testemail@gmail.com",
-        "password": "testpassword123"
+        "first_name": "Jane",
+        "last_name": "Austen",
+        "email": "janetest@hotmail.com",
+        "password": "janetest123"
+    },
+    {
+        "first_name": "Emily",
+        "last_name": "Bronte",
+        "email": "emilytest@aol.com",
+        "password": "emilytest123"
+    },
+    {
+        "first_name": "Mary",
+        "last_name": "Wollstonecraft",
+        "email": "marytest@gmail.com",
+        "password": "marytest123"
     }
 ]
