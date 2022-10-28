@@ -3,7 +3,7 @@ const { User, Post, Comment } = require('../models');
 const withAuth = require('../utils/auth');
 
 // Render the homepage with posts from users
-router.get('/', withAuth, async (req, res) => {
+router.get('/', async (req, res) => {
     try {
         // Get all posts and JOIN with user data
         const resp = await Post.findAll({
@@ -29,7 +29,7 @@ router.get('/', withAuth, async (req, res) => {
 });
 
 // Retrieve a specific post by id
-router.get('/post/:id', withAuth, async (req, res) => {
+router.get('/post/:id', async (req, res) => {
     try {
         const resp = await Post.findByPk(req.params.id, {
             include: [
@@ -51,8 +51,9 @@ router.get('/post/:id', withAuth, async (req, res) => {
     }
 });
 
+
 // Render a specific user's profile w/ associated posts
-router.get('/profile', withAuth, async (req, res) => {
+router.get('/dashboard', withAuth, async (req, res) => {
     try {
         // Find logged in user based on session ID
         const resp = await User.findByPk(req.session.user_id, {
@@ -78,7 +79,6 @@ router.get('/login', (req, res) => {
         res.redirect('/profile');
         return;
     }
-
     res.render('login');
 });
 

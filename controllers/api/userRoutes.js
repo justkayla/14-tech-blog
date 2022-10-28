@@ -62,6 +62,7 @@ router.post('/logout', (req, res) => {
     }
 });
 
+/*
 // UPDATE user
 router.put('/:id', async (req, res) => {
     try {
@@ -81,7 +82,9 @@ router.put('/:id', async (req, res) => {
         res.status(500).json(err.message);
     }
 });
+*/
 
+/*
 // DELETE user
 router.delete('/:id', async (req, res) => {
     try {
@@ -100,5 +103,6 @@ router.delete('/:id', async (req, res) => {
         res.status(500).json(err.message);
     }
 });
+*/
 
 module.exports = router;
