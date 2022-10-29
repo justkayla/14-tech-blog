@@ -66,11 +66,14 @@ https://github.com/justkayla/14-tech-blog
 
 ## Link to deployed site on Railway
 
+https://14-tech-blog-production.up.railway.app/
 
 
 ## Screenshots of deployed application
 
-
+![](screenshot1.png)
+![](screenshot3.png)
+![](screenshot2.png)
 
 
 ## Contributor
