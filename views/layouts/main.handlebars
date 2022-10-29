@@ -37,25 +37,41 @@
                 class="sr-only"
               >(current)</span></a>
           </li>
-          <li class="nav-item active">
-            <a class="nav-link" href="#">Dashboard</a>
-          </li>
-          <li class="nav-item active">
-            <a class="nav-link" href="#">Login</a>
-          </li>
-          <li class="nav-item active">
-            <a class="nav-link" href="#">Logout</a>
-          </li>
+          <!-- Conditionally render login or logout links -->
+          {{#if logged_in}}
+            <li class="nav-item active">
+              <a class="nav-link" href="/dashboard">Dashboard</a>
+            </li>
+            |
+            <li class="nav-item active">
+              <button class="no-button" id="logout">Logout</button>
+            </li>
+          {{else}}
+            <li class="nav-item active">
+              <a class="nav-link" href="/login">Login</a>
+            </li>
+          {{/if}}
         </ul>
       </div>
     </nav>
 
     <main>
-
+      <!-- Render the sub layout -->
+      {{{body}}}
     </main>
 
-    <script src="../../public/js/login.js"></script>
-    <script src="../../public/js/create-account.js"></script>
-    <script src="../../public/js/dashboard.js"></script>
+    <footer>
+
+    </footer>
+
+    <!-- Render script for loggin in users only
+    {{#if logged_in}}
+    <script src-"/js/logout.js"></script>
+    {{/if}}
+    -->
+
+    <script src="/js/login.js"></script>
+    <script src="/js/create-account.js"></script>
+    <script src="/js/dashboard.js"></script>
   </body>
 </html>
