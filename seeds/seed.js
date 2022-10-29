@@ -25,7 +25,7 @@ const seedDatabase = async () => {
     for (const comment of commentData) {
         await Comment.create({
             ...comment,
-            post_id: post.id,
+            post_id: Post.id,
             user_id: users.id,
         });
     }
