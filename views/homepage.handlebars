@@ -1,17 +1,21 @@
 <!-- Homepage -->
 <!-- Loop over each object in the posts array -->
-{{#each posts as |Post| }}
-<div class="row mb-4 post">
-    <div class="col-md-5">
-        <h2>
-            <a href="/post/{{Post.id}}">{{Post.title}}</a>
-        </h2>
-        <p>Post created by {{Post.User.first_name}} {{Post.User.last_name}} on {{format_date Post.timestamps}}</p>
-    </div>
-    <div class="col-md-7">
+{{#each posts as |Post|}}
+  <div class="card-blog-post">
+    <div class="col-md-12">
+      <h2>
+        <a href="/post/{{Post.id}}">{{Post.title}}</a>
+      </h2>
+      <div class="col-md-12 post-content">
         <p>
-            {{Post.content}}
+          {{Post.content}}
         </p>
+        <p>Post created by
+          {{Post.User.first_name}}
+          {{Post.User.last_name}}
+          on
+          {{Post.date_created}}</p>
+      </div>
     </div>
-</div>
+  </div>
 {{/each}}

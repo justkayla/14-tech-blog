@@ -12,11 +12,25 @@ body {
 /*Homepage styling */
 
 /*Blog post styling */
-.blog-post {
-    border: 2px solid grey;
+.card-blog-post {
+    border: 1px solid grey;
     border-radius: 1%;
     padding: 20px;
     margin: 15px;   
+}
+
+.post-content {
+    font-size: 1.25rem;
+
+}
+
+h2 {
+    color: #FCA358;
+    text-align: center;
+}
+
+a {
+    color: #FCA358;
 }
 
 /* Log in styling */
