@@ -6,7 +6,7 @@
         <h2>
             <a href="/post/{{Post.id}}">{{Post.title}}</a>
         </h2>
-        <p>Post created by {{Post.User.first_name}} {{Post.User.last_name}} on {{format_date Post.created_at}}</p>
+        <p>Post created by {{Post.User.first_name}} {{Post.User.last_name}} on {{format_date Post.timestamps}}</p>
     </div>
     <div class="col-md-7">
         <p>
