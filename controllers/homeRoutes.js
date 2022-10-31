@@ -21,15 +21,16 @@ router.get("/homepage", async (req, res) => {
     // Pass serialized data and session flag into template
     res.render("homepage", {
       posts,
-      logged_in: req.session.logged_in,
+      // logged_in: req.session.logged_in,
     });
+  
   } catch (err) {
     res.status(500).json(err.message);
   }
 });
 
 // Retrieve a specific post by id
-router.get("/post/:id", async (req, res) => {
+router.get("/post/:id", withAuth, async (req, res) => {
   try {
     const resp = await Post.findByPk(req.params.id, {
       include: [
@@ -44,8 +45,9 @@ router.get("/post/:id", async (req, res) => {
 
     res.render("post", {
       ...post,
-      logged_in: req.session.logged_in,
+      logged_in: true,
     });
+  
   } catch (err) {
     res.status(500).json(err.message);
   }
@@ -66,6 +68,7 @@ router.get("/dashboard", withAuth, async (req, res) => {
       ...user,
       logged_in: true,
     });
+  
   } catch (err) {
     res.status(500).json(err.message);
   }
@@ -78,23 +81,14 @@ router.get("/login", (req, res) => {
     res.redirect("/dashboard");
     return;
   }
+  
   res.render("login");
 });
 
 // CREATE ACCOUNT route
 router.get("/create-account", (req, res) => {
+  
   res.render("create-account");
-});
-
-// LOGOUT route
-router.get("/logout", (req, res) => {
-  if (req.session.logged_in) {
-    req.session.destroy(() => {
-      res.status(204).end();
-    });
-  } else {
-    res.status(404).end();
-  }
 });
 
 module.exports = router;
