@@ -42,6 +42,15 @@ a {
     background-color: #FCA358;    
 }
 
+/* Create account styling */
+.create-input {
+    margin: 10px;
+}
+
+label {
+    font-weight: bold;
+}
+
 /* Dashboard styling */
 #dashboard-welcome {
     background-color: #FCA358;
@@ -76,4 +85,13 @@ h3 {
     border:#5A5A5A;
     color: #FCA358; 
     font-weight: bold;
+    margin-top: 10px;
+}
+
+textarea {
+    width: 100%;
+}
+
+#post-title {
+    width: 100%;
 }

@@ -4,7 +4,7 @@ const { User } = require("../../models");
 // The `/api/users` endpoint
 
 // CREATE user
-router.post("/", async (req, res) => {
+router.post("/create-account", async (req, res) => {
   try {
     const resp = await User.create(req.body);
     req.session.save(() => {

@@ -3,7 +3,7 @@ const { User, Post, Comment } = require("../models");
 const withAuth = require("../utils/auth");
 
 // Render the homepage with posts from users
-router.get("/", async (req, res) => {
+router.get("/homepage", async (req, res) => {
   try {
     // Get all posts and JOIN with user data
     const resp = await Post.findAll({
@@ -84,6 +84,17 @@ router.get("/login", (req, res) => {
 // CREATE ACCOUNT route
 router.get("/create-account", (req, res) => {
   res.render("create-account");
+});
+
+// LOGOUT route
+router.get("/logout", (req, res) => {
+  if (req.session.logged_in) {
+    req.session.destroy(() => {
+      res.status(204).end();
+    });
+  } else {
+    res.status(404).end();
+  }
 });
 
 module.exports = router;

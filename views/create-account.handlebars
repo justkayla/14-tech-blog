@@ -1,20 +1,56 @@
 <!--Sign up page-->
 <div class="d-flex justify-content-center p-3 m-3" id="sign-up-page">
-    <form class="form-signin col-6 " id="signup-form">
-        <h1 class="h3 mb-3 font-weight-normal" id="login-header">Welcome! Please create an account</h1>
+  <form class="form-signin col-6" id="signup-form">
+    <h1 class="h3 mb-3 font-weight-normal" id="login-header">Welcome! Please
+      create an account</h1>
 
-        <label for="inputFirstName">First name</label>
-        <input type="text" id="createFirstName" class="form-control" placeholder="First name">
-        
-        <label for="inputLastName">Last name</label>
-        <input type="text" id="createLastName" class="form-control" placeholder="Last name">
+    <div class="create-input">
+      <label for="inputFirstName">First name</label>
+      <input
+        type="text"
+        id="createFirstName"
+        class="form-control"
+        placeholder="First name"
+      />
+    </div>
 
-        <label for="inputEmail" class="sr-only">Email address</label>
-        <input type="email" id="createEmail" class="form-control" placeholder="Email address" required autofocus>
+    <div class="create-input">
+      <label for="inputLastName">Last name</label>
+      <input
+        type="text"
+        id="createLastName"
+        class="form-control"
+        placeholder="Last name"
+      />
+    </div>
 
-        <label for="inputPassword" class="sr-only">Password</label>
-        <input type="password" id="createPassword" class="form-control" placeholder="Password" required>       
+    <div class="create-input">
+      <label for="inputEmail">Email address</label>
+      <input
+        type="email"
+        id="createEmail"
+        class="form-control"
+        placeholder="Email address"
+        required
+        autofocus
+      />
+    </div>
 
-        <button class="btn btn-lg btn-primary btn-block" id="sign-up-button" type="submit">Sign up</button>
-    </form>
+    <div class="create-input">
+      <label for="inputPassword">Password</label>
+      <input
+        type="password"
+        id="createPassword"
+        class="form-control"
+        placeholder="Password"
+        required
+      />
+    </div>
+
+    <button
+      class="btn btn-lg btn-primary btn-block"
+      id="sign-up-button"
+      type="submit"
+    >Sign up</button>
+  </form>
 </div>
