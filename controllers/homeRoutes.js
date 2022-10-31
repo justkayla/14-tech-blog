@@ -3,7 +3,7 @@ const { User, Post, Comment } = require("../models");
 const withAuth = require("../utils/auth");
 
 // Render the homepage with posts from users
-router.get("/homepage", async (req, res) => {
+router.get("/", async (req, res) => {
   try {
     // Get all posts and JOIN with user data
     const resp = await Post.findAll({
@@ -21,7 +21,7 @@ router.get("/homepage", async (req, res) => {
     // Pass serialized data and session flag into template
     res.render("homepage", {
       posts,
-      // logged_in: req.session.logged_in,
+      logged_in: req.session.logged_in,
     });
   
   } catch (err) {

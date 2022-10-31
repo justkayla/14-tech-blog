@@ -7,11 +7,12 @@ const { User } = require("../../models");
 router.post("/create-account", async (req, res) => {
   try {
     const resp = await User.create(req.body);
+    
     req.session.save(() => {
       req.session.user_id = resp.id;
       req.session.logged_in = true;
 
-      res.status(200).json(resp);
+      res.json({ user: resp });
     });
   } catch (err) {
     res.status(400).json(err.message);
