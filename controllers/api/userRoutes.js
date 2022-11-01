@@ -6,11 +6,16 @@ const { User } = require("../../models");
 // CREATE user
 router.post("/create-account", async (req, res) => {
   try {
-    const resp = await User.create(req.body);
+    const resp = await User.create({
+      first_name: req.body.first_name,
+      last_name: req.body.last_name,
+      email: req.body.email,
+      password: req.body.password,
+    });
     
     req.session.save(() => {
       req.session.user_id = resp.id;
-      // req.session.logged_in = true; // are you the problem? Don't need this line if they obviously aren't logged in?
+      req.session.logged_in = true; // are you the problem?
 
       res.json({ user: resp });
     });

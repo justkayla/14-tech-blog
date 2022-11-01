@@ -7,7 +7,7 @@ const createAcctFormHandler = async (event) => {
   const password = document.getElementById("createPassword").value.trim();
 
   if (first_name && last_name && email && password) {
-    const resp = await fetch(`/api/users/create-account`, {
+    const resp = await fetch("/api/users/create-account", {
       method: "POST",
       body: JSON.stringify({ first_name, last_name, email, password }),
       headers: { "Content-Type": "application/json" },
