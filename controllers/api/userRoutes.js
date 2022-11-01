@@ -10,12 +10,12 @@ router.post("/create-account", async (req, res) => {
     
     req.session.save(() => {
       req.session.user_id = resp.id;
-      req.session.logged_in = true;
+      // req.session.logged_in = true; // are you the problem? Don't need this line if they obviously aren't logged in?
 
       res.json({ user: resp });
     });
   } catch (err) {
-    res.status(400).json(err.message);
+    res.status(400).json('Failed to sign up');
   }
 });
 
@@ -48,7 +48,7 @@ router.post("/login", async (req, res) => {
     });
   
   } catch (err) {
-    res.status(400).json(err.message);
+    res.status(400).json('Failed to log in');
   }
 });
 
