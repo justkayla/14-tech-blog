@@ -78,4 +78,4 @@ https://14-tech-blog-production.up.railway.app/
 
 ## Contributor
 
-Kayla Justice &copy;2022   
+Kayla Justice 2022   
